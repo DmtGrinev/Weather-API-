@@ -31,8 +31,6 @@ import CoreLocation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        temperatureLabel.text = "ºC"
-        //        feelingTemperature.text = "Feels like  ºC"
         
         netWorkManager.onComplition = { [weak self] currentWeather in
             guard let self = self else { return }
@@ -89,6 +87,7 @@ import CoreLocation
 
 
 // MARK: - CLLocationManagerDelegate
+
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
